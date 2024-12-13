@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Result for URL</title>
+</head>
+<body>
+    <h1>Sentiment Analysis Result</h1>
+    <p><strong>URL:</strong> {{ url }}</p>
+    <h3>Sentiment Counts</h3>
+    <ul>
+        <li>Positive Comments: {{ sentiment_counts['positive'] }}</li>
+        <li>Negative Comments: {{ sentiment_counts['negative'] }}</li>
+        <li>Neutral Comments: {{ sentiment_counts['neutral'] }}</li>
+    </ul>
+    <a href="/analyze_url">Analyze Another URL</a>
+</body>
+</html>

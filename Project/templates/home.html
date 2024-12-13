@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background Image */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ url_for('static', filename='bg.webp') }}'); /* Path to the background image */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-item {
+            color: #fff;
+            margin-right: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 8px 16px;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            text-align: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+
+        /* Heading Container with Translucent Background */
+        .heading-container {
+            background-color: rgba(0, 0, 0, 0.6); /* Translucent black background */
+            padding: 40px 20px;
+            border-radius: 15px;
+            display: inline-block;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .title {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 3rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* Button Container */
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        /* Sentiment Buttons */
+        .sentiment-button {
+            width: 300px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent green background */
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        /* Arrow Styling */
+        .arrow {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .sentiment-button:hover {
+            background-color: rgba(69, 160, 73, 0.6);
+        }
+
+        /* Arrow animation */
+        .sentiment-button:active .arrow {
+            transform: translateX(10px); /* Move arrow right on click */
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Heading and Description Container -->
+        <div class="heading-container">
+            <h1 class="title">Sentiment Analysis</h1>
+            <p class="description">
+                Sentiment analysis is the process of determining the emotional tone behind a series of words, used to understand the attitudes, opinions, and emotions expressed.
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="sentiment-button" id="text-sentiment" onclick="moveToTextSentiment()">
+                Text Sentiment
+                <div class="arrow">→</div> <!-- Right arrow icon -->
+            </button>
+            <button class="sentiment-button" id="url-sentiment" onclick="moveToURLSentiment()">
+                URL Sentiment
+                <div class="arrow">→</div> <!-- Right arrow icon -->
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for button transitions -->
+    <script>
+        function moveToTextSentiment() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            window.location.href = "{{ url_for('predict_text') }}";
+        }
+
+        function moveToURLSentiment() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            window.location.href = "{{ url_for('predict_url') }}"; // Navigate to URL Sentiment Analysis page
+        }
+    </script>
+</body>
+</html>

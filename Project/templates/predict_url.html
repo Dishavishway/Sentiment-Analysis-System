@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background Image */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../static/bg.webp'); /* Path to the page background image */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-item {
+            color: #fff;
+            margin-right: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 8px 16px;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            text-align: center;
+            padding: 10px 20px;
+            color: white;
+            position: relative; /* Ensure content is above background image */
+            z-index: 1; /* Bring content above background */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Input Styling */
+        input[type="url"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(69, 160, 73, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+
+    <div class="container">
+        <h2>Enter a URL for Sentiment Analysis</h2>
+        <form action="{{ url_for('predict_url') }}" method="POST">
+            <input type="url" name="url" placeholder="https://example.com" size="50" required><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+    </div>
+</body>
+</html>

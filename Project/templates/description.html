@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sentiment Analysis Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>About the Sentiment Analysis Project</h1>
+        <p>
+            Welcome to the Sentiment Analysis project! This application allows users to analyze the sentiment of 
+            text comments or web content extracted from URLs. With the help of natural language processing, the 
+            project can detect positive, negative, and neutral sentiments in the text provided.
+        </p>
+        <h2>Key Features:</h2>
+        <ul style="text-align: left;">
+            <li>Analyze individual comments for sentiment.</li>
+            <li>Extract sentiment from web pages by providing a URL.</li>
+            <li>Detailed breakdown of positive, negative, and neutral phrases.</li>
+        </ul>
+        <p>
+            Sentiment analysis can provide valuable insights for customer feedback, social media monitoring, 
+            and content analysis. Explore the features of this application by navigating to the text or URL 
+            sentiment analysis sections.
+        </p>
+        <a href="{{ url_for('home') }}" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

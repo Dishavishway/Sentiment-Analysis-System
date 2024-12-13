@@ -1,0 +1,173 @@
+/* Base styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8b500, #fceabb);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1, h2 {
+    color: #444;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    margin-bottom: 25px;
+}
+
+nav a {
+    margin: 0 12px;
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d84315;
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+textarea, input[type="url"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+textarea:focus, input[type="url"]:focus {
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+button {
+    background: linear-gradient(135deg, #ff5722, #ff8a50);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #d84315, #ff5722);
+    transform: scale(1.05);
+}
+
+.sentiment {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.sentiment-positive {
+    color: #388e3c;
+    background-color: #e8f5e9;
+}
+
+.sentiment-negative {
+    color: #d32f2f;
+    background-color: #ffebee;
+}
+
+.sentiment-neutral {
+    color: #455a64;
+    background-color: #eceff1;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #d84315;
+    text-decoration: underline;
+}
+
+/* Background styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-image: url("{{ url_for('static', filename='image.webp') }}");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff; /* Ensures text stands out against the background */
+}
+
+/* Container styling to keep text readable */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent overlay */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Adjust text color for readability */
+h1, h2, p {
+    color: #f0f0f0;
+}
+
+nav a, .back-link {
+    color: #ffab40;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover, .back-link:hover {
+    color: #ff7043;
+}
