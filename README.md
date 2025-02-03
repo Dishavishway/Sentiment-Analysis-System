@@ -11,18 +11,12 @@ A web-based sentiment analysis application that uses machine learning to analyze
 - **Multi-class Classification**: Detects positive, negative, and neutral sentiments
 
 ## Demo
+![Home Screen](Project/Screenshot 2024-11-08 214734.png)
+![Text Sentiment Search](Screenshot 2024-11-08 214747.png)
+![Text Sentiment Result](Screenshot 2024-11-08 214800.png)
+![URL Sentiment Search](Screenshot 2024-11-08 214800.png)
+![URL Sentiment Result](Screenshot 2024-11-08 214800.png)
 
-The application provides two main analysis modes:
-
-1. **Text Analysis**
-   - Input individual comments
-   - Get immediate sentiment classification
-   - Clean and intuitive interface
-
-2. **URL Analysis**
-   - Analyze entire web pages
-   - Get sentiment breakdown of content
-   - Statistical overview of sentiment distribution
 
 ## Project Structure 📁
 
